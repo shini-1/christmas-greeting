@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas! ❄️</title>
+    <meta name="theme-color" content="#1a2a6c">
+    <meta name="description" content="A special Christmas greeting with a love letter">
+    <meta property="og:title" content="Merry Christmas!">
+    <meta property="og:description" content="A special Christmas greeting with a love letter">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            padding: 1rem;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            width: 600px;
+        }
+        h1 {
+            font-size: clamp(2rem, 8vw, 3rem);
+            margin-bottom: 1rem;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            margin-bottom: 2rem;
+        }
+        .btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 200px;
+        }
+        .btn:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+        .snowflake {
+            position: absolute;
+            color: #fff;
+            font-size: 1.5rem;
+            animation: fall linear forwards;
+            pointer-events: none;
+            z-index: 1;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+                margin: 0.5rem;
+            }
+            .btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Merry Christmas! 🎄</h1>
+        <p>Wishing you a magical holiday season filled with joy and love</p>
+        <a href="love-letter.html" class="btn">Open Your Special Letter ❤️</a>
+    </div>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.innerHTML = '❄️';
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.top = '-30px';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random() * 0.5 + 0.5;
+            document.body.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        for (let i = 0; i < 50; i++) {
+            setTimeout(createSnowflake, Math.random() * 5000);
+        }
+
+        setInterval(createSnowflake, 300);
+    </script>
+</body>
+</html>
